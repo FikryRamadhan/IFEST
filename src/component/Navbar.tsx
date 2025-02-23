@@ -1,6 +1,44 @@
 import { NavLink } from "react-router-dom";
 import { IconShoppingBag, IconUser } from "@tabler/icons-react";
+import { useEffect, useRef, useState } from "react";
+import AuthForm from "./AuthForm";
 const Navbar = () => {
+
+  const [username, setUsername] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const [password, setPassword] = useState('');
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const loginButtonRef = useRef<HTMLButtonElement>(null);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle login logic here
+    console.log('Login submitted:', { username, password });
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        sidebarRef.current &&
+        loginButtonRef.current &&
+        !sidebarRef.current.contains(event.target as Node) &&
+        !loginButtonRef.current.contains(event.target as Node) &&
+        isOpen
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <>
       <div
@@ -47,15 +85,44 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-8 text-zinc-900">
-          <IconUser
-            size={32}
-            className="cursor-pointer hover:text-black transition-colors"
-          />
+          <button
+            onClick={toggleSidebar}
+            ref={loginButtonRef}
+          >
+            <IconUser
+              size={32}
+              className="cursor-pointer hover:text-black transition-colors"
+            />
+          </button>
           <IconShoppingBag
             size={32}
             className="cursor-pointer hover:text-black transition-colors"
           />
         </div>
+      </div>
+
+      {/* Sidebar Auth */}
+      <div className="m-0 font-sans">
+        {/* Sidebar */}
+        <div
+          ref={sidebarRef}
+          className={`fixed h-full w-[300px] top-0 bg-white shadow-xl transition-all duration-500 z-50 p-6 ${isOpen ? 'right-0' : 'right-[-300px]'
+            }`}
+        >
+          <div className="mt-10 mb-2">
+            <h4 className="text-xl">Account</h4>
+            <p className="text-sm">Sign in so we can save your Favorites for you.</p>
+
+          </div>
+          <AuthForm />
+        </div>
+        {/* Overlay */}
+        {isOpen && (
+          <div
+            className="fixed inset-0 bg-black/50 z-40"
+            onClick={toggleSidebar}
+          ></div>
+        )}
       </div>
     </>
   );
