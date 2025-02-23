@@ -3,8 +3,8 @@ import React from "react";
 const Hero = () => {
   return (
     <>
-      <div className="grid grid-cols-4 grid-rows-3 gap-0">
-        <div className="">
+      <div className="grid grid-cols-4 grid-rows-3 gap-0 ">
+        <div className="bg-blue-500 lg:w-[351px]  ">
           <img src="img/satu.jpg" alt="" />
         </div>
         <div className="">
