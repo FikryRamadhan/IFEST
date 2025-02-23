@@ -43,11 +43,11 @@ const Navbar = () => {
     <>
       <div
         id="nav"
-        className="w-full lg:px-28 py-6 flex items-center bg-transparent fixed justify-between fixed top-0 z-50"
+        className="w-full lg:px-28 py-6 flex items-center bg-transparent fixed justify-between top-0 z-50"
       >
         <div className="flex ml-4 opacity-100 items-center gap-3">
-          <h1 className="font-bold whitespace-nowrap text-zinc-900 lg:text-4xl text-2xl">
-            Eco<span className="text-black">Threads</span>
+          <h1 className="font-semibold whitespace-nowrap text-zinc-900 lg:text-2xl text-xl">
+            Second<span><br />Soul</span>
           </h1>
         </div>
 
@@ -81,6 +81,16 @@ const Navbar = () => {
             }
           >
             Education
+          </NavLink>
+          <NavLink
+            to={"/contact"}
+            className={({ isActive }) =>
+              isActive
+                ? "relative pb-2 text-zinc-800 after:content-[''] after:bottom-0 after:h-[5px] after:bg-zinc-900 after:absolute after:rounded-full after:w-full after:left-0 after:transition-all after:duration-500"
+                : "relative pb-2 text-zinc-800 after:content-[''] after:bottom-0 after:h-[5px] after:bg-zinc-900 after:absolute after:rounded-full hover:after:w-[5px] active:after:w-[15px] after:transition-all after:duration-500 after:left-1/2 after:-translate-x-1/2"
+            }
+          >
+            About
           </NavLink>
         </div>
 
