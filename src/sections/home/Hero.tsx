@@ -3,7 +3,6 @@ import React from "react";
 const Hero = () => {
   return (
     <>
-
       <div className="grid grid-cols-4 grid-rows-3 gap-0">
         <div className="">
           <img src="img/satu.jpg" alt="" />
@@ -44,7 +43,7 @@ const Hero = () => {
         </div>
         <div className="col-span-2 col-start-2 row-start-2 bg-gray-100">
           <div className=" flex flex-col items-center justify-center h-full">
-            <h1 className="text-center text-6xl ">
+            <h1 className="text-center lg:text-6xl ">
               The Freedom Of <br />
               fewer pieces
             </h1>
