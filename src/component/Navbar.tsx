@@ -83,7 +83,7 @@ const Navbar = () => {
             Education
           </NavLink>
           <NavLink
-            to={"/contact"}
+            to={"/about"}
             className={({ isActive }) =>
               isActive
                 ? "relative pb-2 text-zinc-800 after:content-[''] after:bottom-0 after:h-[5px] after:bg-zinc-900 after:absolute after:rounded-full after:w-full after:left-0 after:transition-all after:duration-500"
