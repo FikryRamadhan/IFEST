@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Content = () => {
   return (
     <>
-      <div className="lg:w-full bg-slate-950 py-14 lg:px-14 px-4">
+      <div className="lg:w-full bg-zinc-950 py-14 lg:px-14 px-4">
         <h1 className="lg:text-4xl text-2xl text-white mb-8">
           Shop by Category
         </h1>

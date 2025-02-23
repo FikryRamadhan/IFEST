@@ -1,96 +1,89 @@
 import { NavLink } from "react-router-dom";
-import { IconShoppingBag, IconUser } from "@tabler/icons-react";
+import {
+  IconShoppingBag,
+  IconUser,
+  IconMenu2,
+  IconX,
+} from "@tabler/icons-react";
 import { useEffect, useRef, useState } from "react";
 import AuthForm from "./AuthForm";
+
 const Navbar = () => {
-  const [username, setUsername] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
-  const [password, setPassword] = useState("");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const loginButtonRef = useRef<HTMLButtonElement>(null);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+  let lastScrollY = useRef(0);
+  let scrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle login logic here
-    console.log("Login submitted:", { username, password });
+  // Handle menu toggle
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  // Scroll behavior
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY.current) {
+      // Scroll ke bawah -> navbar menghilang
+      setIsNavbarVisible(false);
+    } else {
+      // Scroll ke atas -> navbar muncul
+      setIsNavbarVisible(true);
+    }
+
+    // Cek apakah navbar harus tetap muncul setelah scroll berhenti
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+    scrollTimeout.current = setTimeout(() => {
+      setIsNavbarVisible(true);
+    }, 500);
+
+    // Simpan posisi terakhir scroll
+    lastScrollY.current = currentScrollY;
+    setIsScrolled(currentScrollY > 50);
   };
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        sidebarRef.current &&
-        loginButtonRef.current &&
-        !sidebarRef.current.contains(event.target as Node) &&
-        !loginButtonRef.current.contains(event.target as Node) &&
-        isOpen
-      ) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
+      {/* Navbar */}
       <div
         id="nav"
-        className="w-full px-4  lg:px-28 py-6 flex items-center bg-transparent justify-between fixed top-0 z-50"
+        className={`w-full px-4 lg:px-28 py-6 flex items-center justify-between fixed top-0 z-50 transition-all duration-300 ${
+          isScrolled ? "bg-white shadow-md" : "bg-transparent"
+        } ${isNavbarVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <div className="flex  opacity-100 items-center gap-3">
+        {/* Left Side */}
+        <div className="flex items-center gap-3">
+          <button className="lg:hidden" onClick={toggleMenu}>
+            {isMenuOpen ? <IconX size={32} /> : <IconMenu2 size={32} />}
+          </button>
           <h1 className="font-bold whitespace-nowrap text-zinc-900 lg:text-4xl text-2xl">
             Eco<span className="text-black">Threads</span>
           </h1>
         </div>
 
-        <div className="hidden flex-1 lg:mt-5 lg:flex ml-20 items-center text-lg gap-14 text-zinc-900 font-semibold">
-          <NavLink
-            to={""}
-            className="relative lg:ml-1  pb-2 text-zinc-950 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
-          >
+        {/* Desktop Navigation */}
+        <div className="hidden lg:mt-4 lg:flex flex-1 ml-20 items-center text-lg gap-14 text-zinc-900 font-semibold">
+          <NavLink to={""} className="relative pb-2 text-lg hover:text-black">
             Home
           </NavLink>
-          <NavLink
-            to={""}
-            className="relative lg:ml-1  pb-2 text-zinc-950 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
-          >
+          <NavLink to={""} className="relative pb-2 text-lg hover:text-black">
             Swap
           </NavLink>
-          <NavLink
-            to={""}
-            className="relative lg:ml-1  pb-2 text-zinc-950 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
-          >
+          <NavLink to={""} className="relative pb-2 text-lg hover:text-black">
             Education
           </NavLink>
-          {/* <NavLink
-            to={"/e-learning"}
-            className={({ isActive }) =>
-              isActive
-                ? "relative pb-2 text-zinc-800 after:content-[''] after:bottom-0 after:h-[5px] after:bg-zinc-900 after:absolute after:rounded-full after:w-full after:left-0 after:transition-all after:duration-500"
-                : "relative pb-2 text-zinc-800 after:content-[''] after:bottom-0 after:h-[5px] after:bg-zinc-400 after:absolute after:rounded-full hover:after:w-[5px] active:after:w-[15px] after:transition-all after:duration-500 after:left-1/2 after:-translate-x-1/2"
-            }
-          >
-            Swap
-          </NavLink>
-          <NavLink
-            to={"/contact"}
-            className={({ isActive }) =>
-              isActive
-                ? "relative pb-2 text-zinc-800 after:content-[''] after:bottom-0 after:h-[5px] after:bg-zinc-900 after:absolute after:rounded-full after:w-full after:left-0 after:transition-all after:duration-500"
-                : "relative pb-2 text-zinc-800 after:content-[''] after:bottom-0 after:h-[5px] after:bg-zinc-900 after:absolute after:rounded-full hover:after:w-[5px] active:after:w-[15px] after:transition-all after:duration-500 after:left-1/2 after:-translate-x-1/2"
-            }
-          >
-            Education
-          </NavLink> */}
         </div>
 
+        {/* Right Side */}
         <div className="flex items-center gap-4 lg:gap-8 text-zinc-900">
           <button onClick={toggleSidebar} ref={loginButtonRef}>
             <IconUser
@@ -105,13 +98,42 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-0 left-0 w-[250px] h-full bg-white shadow-md transform ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 lg:hidden z-50`}
+      >
+        <div className="p-6">
+          {/* Header Mobile Menu */}
+          <div className="flex items-center justify-between">
+            <h1 className="text-left font-bold text-xl mr-auto">EcoThreads</h1>
+            <button onClick={toggleMenu}>
+              <IconX size={32} />
+            </button>
+          </div>
+
+          {/* Navigasi */}
+          <nav className="flex flex-col gap-4 mt-10 text-lg font-semibold">
+            <NavLink to={""} onClick={toggleMenu} className="hover:text-black">
+              Home
+            </NavLink>
+            <NavLink to={""} onClick={toggleMenu} className="hover:text-black">
+              Swap
+            </NavLink>
+            <NavLink to={""} onClick={toggleMenu} className="hover:text-black">
+              Education
+            </NavLink>
+          </nav>
+        </div>
+      </div>
+
       {/* Sidebar Auth */}
       <div className="m-0 font-sans">
-        {/* Sidebar */}
         <div
           ref={sidebarRef}
           className={`fixed h-full w-[300px] top-0 bg-white shadow-xl transition-all duration-500 z-50 p-6 ${
-            isOpen ? "right-0" : "right-[-300px]"
+            isSidebarOpen ? "right-0" : "right-[-300px]"
           }`}
         >
           <div className="mt-10 mb-2">
@@ -122,8 +144,7 @@ const Navbar = () => {
           </div>
           <AuthForm />
         </div>
-        {/* Overlay */}
-        {isOpen && (
+        {isSidebarOpen && (
           <div
             className="fixed inset-0 bg-black/50 z-40"
             onClick={toggleSidebar}
