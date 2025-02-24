@@ -72,7 +72,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:mt-4 lg:flex flex-1 ml-20 items-center text-lg gap-14 text-zinc-900 font-semibold">
-          <NavLink to={""} className="relative pb-2 text-lg hover:text-black">
+          <NavLink to={"/"} className="relative pb-2 text-lg hover:text-black">
             Home
           </NavLink>
           <NavLink to={""} className="relative pb-2 text-lg hover:text-black">
@@ -81,7 +81,7 @@ const Navbar = () => {
           <NavLink to={""} className="relative pb-2 text-lg hover:text-black">
             Swap
           </NavLink>
-          <NavLink to={""} className="relative pb-2 text-lg hover:text-black">
+          <NavLink to={"/about"} className="relative pb-2 text-lg hover:text-black">
             About
           </NavLink>
         </div>

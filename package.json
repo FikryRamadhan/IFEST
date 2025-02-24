@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.22.0",
     "@tabler/icons-react": "^3.30.0",
     "@tailwindcss/vite": "^4.0.7",
     "aos": "^2.3.4",
+    "dotenv": "^16.4.7",
     "nodemon": "^3.1.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
