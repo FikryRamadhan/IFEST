@@ -5,23 +5,23 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EcoThreads</title>
+  <title>Second Soul</title>
 </head>
 
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
   <script>
-    const crypto = require('crypto');
-
-    const secret = 'ac4wqgosg13vy3h18jsc3weqjz4zj4gr'; // Your verification secret key
-    const userId = 0 // A string UUID to identify your user
-
-    const hash = crypto.createHmac('sha256', secret).update(userId).digest('hex');
-  </script>
-  <script>
     (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "XrAoew-rLxNnPk5u3h01I"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
-  </script>
+    </script>
+    <script>
+      const crypto = require('crypto');
+  
+      const secret = 'ac4wqgosg13vy3h18jsc3weqjz4zj4gr'; // Your verification secret key
+      const userId = 1
+  
+      const hash = crypto.createHmac('sha256', secret).update(userId).digest('hex');
+    </script>
 </body>
 
 </html>
