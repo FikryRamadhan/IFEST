@@ -21,7 +21,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="#"
-                    className="inline-block text-base hover:text-primary mb-3"
+                    className="inline-block text-base hover:text-slate-100 mb-3"
                   >
                     Programing
                   </a>
@@ -29,7 +29,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="#"
-                    className="inline-block text-base hover:text-primary mb-3"
+                    className="inline-block text-base hover:text-slate-100 mb-3"
                   >
                     Programing
                   </a>
@@ -37,7 +37,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="#"
-                    className="inline-block text-base hover:text-primary mb-3"
+                    className="inline-block text-base hover:text-slate-100 mb-3"
                   >
                     Programing
                   </a>
@@ -52,7 +52,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="#home"
-                    className="inline-block text-base hover:text-primary mb-3"
+                    className="inline-block text-base hover:text-slate-100 mb-3"
                   >
                     Beranda
                   </a>
@@ -60,7 +60,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="#about"
-                    className="inline-block text-base hover:text-primary mb-3"
+                    className="inline-block text-base hover:text-slate-100 mb-3"
                   >
                     Tentang Saya
                   </a>
@@ -68,7 +68,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="#portfolio"
-                    className="inline-block text-base hover:text-primary mb-3"
+                    className="inline-block text-base hover:text-slate-100 mb-3"
                   >
                     Portfolio
                   </a>
@@ -76,7 +76,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="#clients"
-                    className="inline-block text-base hover:text-primary mb-3"
+                    className="inline-block text-base hover:text-slate-100 mb-3"
                   >
                     Clients
                   </a>
@@ -84,7 +84,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="#blog"
-                    className="inline-block text-base hover:text-primary mb-3"
+                    className="inline-block text-base hover:text-slate-100 mb-3"
                   >
                     Blog
                   </a>
@@ -92,7 +92,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="#contact"
-                    className="inline-block text-base hover:text-primary mb-3"
+                    className="inline-block text-base hover:text-slate-100 mb-3"
                   >
                     Contact
                   </a>
