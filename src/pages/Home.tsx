@@ -9,7 +9,7 @@ const Home = () => {
     <>
       <div>
         <Navbar />
-        <div>
+        <div className="lg:mt-20 mt-10">
           <Hero />
         </div>
         <div className="w-full">

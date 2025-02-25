@@ -5,15 +5,15 @@ const About = () => {
   return (
     <>
       <section className="">
-        <div className="w-full flex flex-col lg:py-16 lg:flex-row lg:items-center lg:px-20 gap-10 bg-zinc-900">
-          <div className="lg:w-1/2 w-full">
+        <div className="w-full flex flex-col min-md:py-16 min-md:flex-row lg:items-center min-md:px-20 gap-10 bg-black">
+          <div className="min-md:w-1/2 w-full">
             <img
               src="img/satu.jpg"
               alt=""
-              className="w-full h-auto object-cover"
+              className="w-full min-md:w-[450px] min-md:ml-15 h-auto object-cover"
             />
           </div>
-          <div className="lg:w-1/2 w-full px-4 lg:px-0 mb-10 lg:mt-0 text-left lg:text-left">
+          <div className="lg:w-1/2 w-full px-4 lg:px-0 mb-10 lg:mt-0 text-left lg:text-left md:mt-15">
             <h1 className="lg:text-5xl text-3xl mb-6 lg:mb-6 text-white ">
               Modern shapes that move with you.
             </h1>
@@ -25,32 +25,33 @@ const About = () => {
             </NavLink>
           </div>
         </div>
-        <div className="w-full flex flex-col-reverse lg:flex-row lg:items-center lg:px-20 gap-10 bg-zinc-900">
-          <div className="lg:w-1/2 w-full text-left lg:text-left mb-10 px-4 lg:px-0">
-            <h1 className="lg:text-5xl lg:mb-6 mb-6  text-3xl text-white ">
+        <div className="w-full flex flex-col min-md:py-16 min-md:flex-row-reverse lg:items-center min-md:px-20 gap-10 bg-black">
+          <div className="min-md:w-1/2 w-full">
+            <img
+              src="img/satu.jpg"
+              alt=""
+              className="w-full min-md:w-[400px] min-md:ml-24 h-auto object-cover"
+            />
+          </div>
+          <div className="lg:w-1/2 w-full px-4 lg:px-0 mb-10 lg:mt-0 text-left lg:text-left md:mt-15">
+            <h1 className="lg:text-5xl text-3xl mb-6 lg:mb-6 text-white ">
               Modern shapes that move with you.
             </h1>
             <NavLink
               to={""}
-              className="relative pb-2 text-white text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
+              className="relative lg:ml-1  pb-2 text-white text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
             >
-              Shop Tops
+              Shop Pants
             </NavLink>
           </div>
-          <div className="lg:w-1/2 w-full lg:py-16 ">
-            <img
-              src="img/satu.jpg"
-              alt=""
-              className="w-full h-auto object-cover"
-            />
-          </div>
         </div>
-        <div className="w-full flex flex-col lg:flex-row lg:items-center lg:px-20 gap-10 bg-zinc-900">
-          <div className="lg:w-1/2 w-full lg:py-16">
+
+        <div className="w-full flex flex-col min-md:flex-row top-0 min-md:items-center min-md:px-20 gap-10 bg-black">
+          <div className="min-md:w-1/2 w-full min-md:py-16">
             <img
               src="img/satu.jpg"
               alt=""
-              className="w-full h-auto object-cover"
+              className="w-full min-md:[400px] h-auto object-cover"
             />
           </div>
           <div className="lg:w-1/2 px-4 w-full text-left lg:text-left mb-10">

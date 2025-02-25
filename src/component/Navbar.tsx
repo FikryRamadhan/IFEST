@@ -29,10 +29,10 @@ const Navbar = () => {
 
     if (currentScrollY > lastScrollY.current) {
       // Scroll ke bawah -> navbar menghilang
-      setIsNavbarVisible(false);
+      setIsNavbarVisible(true);
     } else {
       // Scroll ke atas -> navbar muncul
-      setIsNavbarVisible(true);
+      setIsNavbarVisible(false);
     }
 
     // Cek apakah navbar harus tetap muncul setelah scroll berhenti
@@ -56,9 +56,9 @@ const Navbar = () => {
       {/* Navbar */}
       <div
         id="nav"
-        className={`w-full px-4 lg:px-28 py-2 flex items-center justify-between fixed top-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white shadow-md" : "bg-transparent"
-        } ${isNavbarVisible ? "translate-y-0" : "-translate-y-full"}`}
+        className={`w-full px-4 lg:px-28 py-3 bg-white md:px-10 flex items-center justify-between fixed top-0 z-50 transition-all duration-300 ${
+          isScrolled ? "bg-white opacity-90 shadow-md" : "bg-transparent"
+        }`}
       >
         {/* Left Side */}
         <div className="flex items-center gap-3">
