@@ -73,10 +73,16 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden lg:mt-4 lg:flex flex-1 ml-20 items-center text-lg gap-14 text-zinc-900 font-semibold">
           <NavLink
-            to={""}
+            to={"/"}
             className="relative lg:ml-1  pb-2 text-zinc-950 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-zinc-950 after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
           >
             Home
+          </NavLink>
+          <NavLink
+            to={"/shop-fashion"}
+            className="relative lg:ml-1  pb-2 text-zinc-950 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-zinc-950 after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
+          >
+            Shop
           </NavLink>
           <NavLink
             to={""}
@@ -124,10 +130,16 @@ const Navbar = () => {
           {/* Navigasi */}
           <nav className="flex flex-col gap-4 mt-10 text-lg font-semibold">
             <NavLink
-              to={""}
+              to={"/"}
               className="relative lg:ml-1  pb-2 text-zinc-950 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-zinc-950 after:absolute after:rounded-full hover:after:w-1/2  after:transition-all after:duration-500 after:left-0"
             >
               Home
+            </NavLink>
+            <NavLink
+              to={"/shop-fashion"}
+              className="relative lg:ml-1  pb-2 text-zinc-950 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-zinc-950 after:absolute after:rounded-full hover:after:w-1/2 after:transition-all after:duration-500 after:left-0"
+            >
+              Shop
             </NavLink>
             <NavLink
               to={""}

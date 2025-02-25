@@ -85,11 +85,11 @@ const Hero = () => {
         <div className="col-span-2 col-start-2 row-start-2 bg-gray-100">
           <div className=" flex flex-col items-center justify-center h-full">
             <h1 className="text-center md:text-2xl lg:text-6xl ">
-              The Freedom Of <br />
-              fewer pieces
+              Gaya Baru <br />
+              Fashion Lama
             </h1>
             <button className="lg:block hidden md:block md:mt-2 lg:mt-6 border text-lg hover:bg-zinc-950 hover:text-white  border-zinc-900 py-3 px-10">
-              Shop The Foundation
+              Beli Sekarang
             </button>
           </div>
         </div>
@@ -99,7 +99,7 @@ const Hero = () => {
             to={""}
             className="relative lg:ml-1 pb-2 text-zinc-900 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-zinc-950 after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
           >
-            Shop The Foundation
+            Beli Sekarang
           </NavLink>
         </div>
       </div>
