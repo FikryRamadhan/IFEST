@@ -4,41 +4,51 @@ import { NavLink } from "react-router-dom";
 const Content = () => {
   return (
     <>
-      <div className="w-full bg-slate-950 py-14 px-14">
-        <h1 className="text-4xl text-white mb-8">Shop by Category</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:flex items-center gap-6">
-          <div className="">
-            <img src="img/satu.jpg" className="mb-6 w-full" alt="" />
+      <div className="lg:w-full bg-zinc-950 py-14 lg:px-14 px-4">
+        <h1 className="lg:text-4xl text-2xl text-white mb-8">
+          Shop by Category
+        </h1>
+        <div className="grid grid-cols-2 gap-6 items-center sm:grid-cols-2 lg:grid-cols-4">
+          <div className="text-left">
+            <img
+              src="img/satu.jpg"
+              className="mb-6 w-full"
+              alt="Shop Best Sellers"
+            />
             <NavLink
-              to={"/e-learning"}
-              className="relative pb-2 text-white text-lg after:content-[''] after:bottom-0 after:h-[5px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
+              to={""}
+              className="relative pb-2 text-white text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
             >
               Shop Best Sellers
             </NavLink>
           </div>
-          <div className="">
-            <img src="img/satu.jpg" className="mb-6 w-full" alt="" />
+          <div className="text-left">
+            <img src="img/satu.jpg" className="mb-6 w-full" alt="Shop Pants" />
             <NavLink
-              to={"/e-learning"}
-              className="relative pb-2 text-white text-lg after:content-[''] after:bottom-0 after:h-[5px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
+              to={""}
+              className="relative pb-2 text-white text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
             >
               Shop Pants
             </NavLink>
           </div>
-          <div className="">
-            <img src="img/satu.jpg" className="mb-6 w-full" alt="" />
+          <div className="text-left">
+            <img
+              src="img/satu.jpg"
+              className="mb-6 w-full"
+              alt="Shop Tops & Tees"
+            />
             <NavLink
-              to={"/e-learning"}
-              className="relative pb-2 text-white text-lg after:content-[''] after:bottom-0 after:h-[5px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
+              to={""}
+              className="relative pb-2 text-white text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
             >
               Shop Tops & Tees
             </NavLink>
           </div>
-          <div className="">
-            <img src="img/satu.jpg" className="mb-6 w-full" alt="" />
+          <div className="text-left">
+            <img src="img/satu.jpg" className="mb-6 w-full" alt="Shop All" />
             <NavLink
-              to={"/e-learning"}
-              className="relative pb-2 text-white text-lg after:content-[''] after:bottom-0 after:h-[5px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
+              to={""}
+              className="relative pb-2 text-white text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
             >
               Shop All
             </NavLink>
