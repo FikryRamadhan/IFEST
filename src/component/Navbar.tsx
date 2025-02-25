@@ -56,7 +56,7 @@ const Navbar = () => {
       {/* Navbar */}
       <div
         id="nav"
-        className={`w-full px-4 lg:px-28 py-6 flex items-center justify-between fixed top-0 z-50 transition-all duration-300 ${
+        className={`w-full px-4 lg:px-28 py-2 flex items-center justify-between fixed top-0 z-50 transition-all duration-300 ${
           isScrolled ? "bg-white shadow-md" : "bg-transparent"
         } ${isNavbarVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
@@ -65,8 +65,8 @@ const Navbar = () => {
           <button className="lg:hidden" onClick={toggleMenu}>
             {isMenuOpen ? <IconX size={32} /> : <IconMenu2 size={32} />}
           </button>
-          <h1 className="font-bold whitespace-nowrap text-zinc-900 lg:text-4xl text-2xl">
-            Eco<span className="text-black">Threads</span>
+          <h1 className="whitespace-nowrap text-zinc-900 lg:text-4xl text-2xl">
+            Second Soul
           </h1>
         </div>
 
