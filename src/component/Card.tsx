@@ -7,14 +7,10 @@ const Card = ({ name, description, images, hoverImages, price, colors }) => {
   const [hoverIndex, setHoverIndex] = useState(null);
 
   const handleMouseEnter = () => {
-    if (hoverImages && hoverImages[selectedIndex]) {
-      setCurrentImage(hoverImages[selectedIndex]);
-    }
     setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
-    setCurrentImage(images[selectedIndex]);
     setIsHovered(false);
   };
 
@@ -34,13 +30,13 @@ const Card = ({ name, description, images, hoverImages, price, colors }) => {
   };
 
   return (
-    <div className="bg-white overflow-hidden max-w-xs w-64 text-left">
+    <div className="bg-white space-10 rounded-lg shadow-gray-300 shadow-lg overflow-hidden max-w-xs w-full text-left">
       <div
         className="relative"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {currentImage && <img src={currentImage} alt={name} className="w-full h-full object-cover" />}
+        <img src={currentImage} alt={name} className="w-full h-[300px] object-cover" />
         {isHovered && (
           <div className="absolute bottom-0 left-0 w-full bg-gray-200 bg-opacity-50 text-black text-center py-2">
             Buy Now
@@ -48,16 +44,16 @@ const Card = ({ name, description, images, hoverImages, price, colors }) => {
         )}
       </div>
       <div className="p-3">
-        <h2 className="text-md font-semibold text-gray-800">{name}</h2>
+        <h2 className="min-md:text-md font-semibold text-gray-800">{name}</h2>
         <p className="text-sm text-gray-500 mt-1">{description}</p>
-        <p className="text-md font-bold text-black-600 mt-2">Rp {price.toLocaleString()}</p>
+        <p className="min-md:text-md font-bold text-black-600 mt-1">Rp {price.toLocaleString()}</p>
         
         {/* Warna Selector */}
         <div className="flex gap-2 mt-4">
           {images.map((image, index) => (
             <div
               key={index}
-              className={`w-8 h-8 rounded-full cursor-pointer border-2 transition ${selectedIndex === index ? 'border-black' : 'border-transparent'} ${colors[index]}`}
+              className={`w-8 sm:w-0.5 h-8 sm:h-0.5 rounded-full cursor-pointer border-2 transition ${selectedIndex === index ? 'border-black' : 'border-transparent'} ${colors[index]}`}
               onClick={() => handleSelect(index)}
               onMouseEnter={() => handleHover(index)}
               onMouseLeave={handleHoverLeave}
