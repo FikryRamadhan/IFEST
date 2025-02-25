@@ -106,7 +106,6 @@ const Navbar = () => {
           />
         </div>
       </div>
-
       {/* Mobile Menu */}
       <div
         className={`fixed top-0 left-0 w-[250px] h-full bg-white shadow-md transform ${
@@ -116,7 +115,7 @@ const Navbar = () => {
         <div className="p-6">
           {/* Header Mobile Menu */}
           <div className="flex items-center justify-between">
-            <h1 className="text-left font-bold text-xl mr-auto">EcoThreads</h1>
+            <h1 className="text-left font-bold text-xl mr-auto">Second Soul</h1>
             <button onClick={toggleMenu}>
               <IconX size={32} />
             </button>
@@ -145,7 +144,6 @@ const Navbar = () => {
           </nav>
         </div>
       </div>
-
       {/* Sidebar Auth */}
       <div className="m-0 font-sans">
         <div

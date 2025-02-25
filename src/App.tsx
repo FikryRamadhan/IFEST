@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Navbar from './component/Navbar'
 import NotFound from './pages/NotFound'
 import About from './pages/About'
+import ChatbotButton from './component/ModalChat'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ChatbotButton />
       </Router>
     </>
   )
