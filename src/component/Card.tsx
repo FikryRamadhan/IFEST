@@ -34,7 +34,7 @@ const Card = ({ name, description, images, hoverImages, price, colors }) => {
   };
 
   return (
-    <div className="bg-white shadow-lg overflow-hidden max-w-sm text-left">
+    <div className="bg-white overflow-hidden max-w-xs w-64 text-left">
       <div
         className="relative"
         onMouseEnter={handleMouseEnter}
@@ -47,10 +47,10 @@ const Card = ({ name, description, images, hoverImages, price, colors }) => {
           </div>
         )}
       </div>
-      <div className="p-4">
-        <h2 className="text-lg font-semibold text-gray-800">{name}</h2>
+      <div className="p-3">
+        <h2 className="text-md font-semibold text-gray-800">{name}</h2>
         <p className="text-sm text-gray-500 mt-1">{description}</p>
-        <p className="text-lg font-bold text-black-600 mt-2">Rp {price.toLocaleString()}</p>
+        <p className="text-md font-bold text-black-600 mt-2">Rp {price.toLocaleString()}</p>
         
         {/* Warna Selector */}
         <div className="flex gap-2 mt-4">
