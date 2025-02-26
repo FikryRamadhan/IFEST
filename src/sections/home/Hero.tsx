@@ -8,21 +8,21 @@ const Hero = () => {
         <div className="bg-blue-500">
           <img
             src="img/satu.jpg"
-            className="h-[160px] object-cover md:h-[300px]  lg:w-[351px] lg:h-[405px]"
+            className="h-[160px] object-cover md:h-[300px] min-sm:w-full w-full lg:w-[351px] lg:h-[405px]"
             alt=""
           />
         </div>
         <div className="">
           <img
             src="img/hero1.jpg"
-            className="h-[160px] object-cover md:w-[300px] md:h-[300px] lg:w-[351px] lg:h-[405px]"
+            className="h-[160px] object-cover min-sm:w-full w-full md:w-[300px] md:h-[300px] lg:w-[351px] lg:h-[405px]"
             alt=""
           />
         </div>
         <div className="">
           <img
             src="img/hero2.jpg"
-            className="h-[160px] object-cover md:h-[300px] lg:w-[351px] lg:h-[405px]"
+            className="h-[160px] object-cover min-sm:w-full w-full md:h-[300px] lg:w-[351px] lg:h-[405px]"
             alt=""
           />
         </div>
@@ -30,7 +30,7 @@ const Hero = () => {
           {" "}
           <img
             src="img/hero3.jpg"
-            className="h-[160px] object-cover md:h-[300px] lg:w-[351px] lg:h-[405px]"
+            className="h-[160px] object-cover min-sm:w-full w-full md:h-[300px] lg:w-[351px] lg:h-[405px]"
             alt=""
           />
         </div>
@@ -38,7 +38,7 @@ const Hero = () => {
           {" "}
           <img
             src="img/hero1.jpg"
-            className="h-[160px] object-cover md:h-[300px] lg:w-[351px] lg:h-[405px]"
+            className="h-[160px] object-cover min-sm:w-full w-full md:h-[300px] lg:w-[351px] lg:h-[405px]"
             alt=""
           />
         </div>
@@ -46,7 +46,7 @@ const Hero = () => {
           {" "}
           <img
             src="img/hero2.jpg"
-            className="h-[160px] object-cover md:h-[300px] lg:w-[351px] lg:h-[405px]"
+            className="h-[160px] object-cover min-sm:w-full w-full md:h-[300px] lg:w-[351px] lg:h-[405px]"
             alt=""
           />
         </div>
@@ -54,7 +54,7 @@ const Hero = () => {
           {" "}
           <img
             src="img/satu.jpg"
-            className="h-[160px] object-cover md:h-[300px] lg:w-[351px] lg:h-[405px]"
+            className="h-[160px] object-cover min-sm:w-full w-full md:h-[300px] lg:w-[351px] lg:h-[405px]"
             alt=""
           />
         </div>
@@ -62,7 +62,7 @@ const Hero = () => {
           {" "}
           <img
             src="img/hero1.jpg"
-            className="h-[160px] md:w-[300px]  object-cover md:h-[300px] lg:w-[351px] lg:h-[405px]"
+            className="h-[160px] md:w-[300px]  object-cover min-sm:w-full w-full md:h-[300px] lg:w-[351px] lg:h-[405px]"
             alt=""
           />
         </div>
@@ -70,7 +70,7 @@ const Hero = () => {
           {" "}
           <img
             src="img/hero2.jpg"
-            className="h-[160px] object-cover md:h-[300px] lg:w-[351px] lg:h-[405px]"
+            className="h-[160px] object-cover min-sm:w-full w-full md:h-[300px] lg:w-[351px] lg:h-[405px]"
             alt=""
           />
         </div>
@@ -78,7 +78,7 @@ const Hero = () => {
           {" "}
           <img
             src="img/hero3.jpg"
-            className="h-[160px] object-cover md:h-[300px] lg:w-[351px] lg:h-[405px]"
+            className="h-[160px] object-cover min-sm:w-full w-full md:h-[300px] lg:w-[351px] lg:h-[405px]"
             alt=""
           />
         </div>
@@ -88,7 +88,7 @@ const Hero = () => {
               The Freedom Of <br />
               fewer pieces
             </h1>
-            <button className="lg:block hidden md:block md:mt-2 lg:mt-6 border text-lg hover:bg-zinc-950 hover:text-white  border-zinc-900 py-3 px-10">
+            <button className="lg:block hidden md:block md:mt-3 lg:mt-6 border text-lg hover:bg-zinc-950 hover:text-white  border-zinc-900 py-3 px-10">
               Shop The Foundation
             </button>
           </div>
