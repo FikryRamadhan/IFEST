@@ -15,7 +15,8 @@ const About = () => {
           </div>
           <div className="lg:w-1/2 w-full  px-4 lg:px-0 mb-10 lg:mt-0 text-left md:mt-15">
             <h1 className="lg:text-4xl md:text-2xl md:mt-10 text-3xl mb-6 text-white">
-              Modern shapes that move <br /> with you.
+
+              Fashion modern yang terlahir <br /> kembali dari pakaian lama.
             </h1>
             <NavLink
               to={""}
@@ -36,13 +37,13 @@ const About = () => {
           </div>
           <div className="lg:w-1/2 w-full  px-4 lg:px-0 mb-10 lg:mt-0 text-left md:mt-15">
             <h1 className="lg:text-4xl md:text-2xl md:mt-10 text-3xl mb-6 text-white">
-              Modern shapes that move <br /> with you.
+            Berikan Nyawa Baru pada <br /> Pakaian Lama!
             </h1>
             <NavLink
               to={""}
               className="relative pb-2 text-white text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-white after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
             >
-               Lihat Selanjutnya
+              Lihat Selanjutnya
             </NavLink>
           </div>
         </div>
@@ -57,7 +58,7 @@ const About = () => {
           </div>
           <div className="lg:w-1/2 w-full  px-4 lg:px-0 mb-10 lg:mt-0 text-left md:mt-15">
             <h1 className="lg:text-4xl md:text-2xl md:mt-10 text-3xl mb-6 text-white">
-              Modern shapes that move <br /> with you.
+            Tukar, Daur Ulang, <br />Pakai Lagi!
             </h1>
             <NavLink
               to={""}

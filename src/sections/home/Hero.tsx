@@ -89,7 +89,7 @@ const Hero = () => {
               Fashion Lama
             </h1>
             <button className="lg:block hidden md:block md:mt-3 lg:mt-6 border text-lg hover:bg-zinc-950 hover:text-white  border-zinc-900 py-3 px-10">
-              Shop The Foundation
+              Beli Sekarang
             </button>
           </div>
         </div>
