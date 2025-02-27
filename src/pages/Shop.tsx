@@ -9,8 +9,16 @@ const Shop = () => {
   return (
     <>
     <Navbar />
+    <div className="grid grid-cols-3 gap-1 md:grid-cols-3">
+      <img src="/heroShop1.jpg" alt="Pose 1" className="col-span-2 row-span-2 object-cover" />
+      <img src="/heroShop2.jpg" alt="Pose 2" className="col-span-1 row-span-1 object-cover" />
+      <img src="/heroShop6.jpg" alt="Pose 3" className="col-span-1 row-span-2 object-cover" />
+      <img src="/heroShop.jpg" alt="Pose 4" className="col-span-2 row-span-1 object-cover" />
+      <img src="/heroShop5.jpg" alt="Pose 5" className="col-span-1 row-span-1 object-cover" />
+      <img src="/heroShop3.jpg" alt="Pose 6" className="col-span-2 row-span-1 object-cover" />
+    </div>
     <div className="flex justify-center mb-5 px-5 min-md:px-24 min-md:mb-10">
-      <div className="container mt-20">
+      <div className="container">
       <div className="justify-center flex">
         <ShopCategory 
             categories={["All", "Shirt", "Pants", "Jacket"]}

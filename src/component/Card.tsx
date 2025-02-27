@@ -53,7 +53,7 @@ const Card = ({ name, description, images, hoverImages, price, colors }) => {
           {images.map((image, index) => (
             <div
               key={index}
-              className={`w-8 sm:w-0.5 h-8 sm:h-0.5 rounded-full cursor-pointer border-2 transition ${selectedIndex === index ? 'border-black' : 'border-transparent'} ${colors[index]}`}
+              className={`w-5 sm:w-7 h-5 sm:h-7 rounded-full cursor-pointer border-2 transition ${selectedIndex === index ? 'border-black' : 'border-transparent'} ${colors[index]}`}
               onClick={() => handleSelect(index)}
               onMouseEnter={() => handleHover(index)}
               onMouseLeave={handleHoverLeave}
