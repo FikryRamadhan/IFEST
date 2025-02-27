@@ -9,7 +9,7 @@ const Shop = () => {
   return (
     <>
     <Navbar />
-    <div className="grid grid-cols-3 gap-1 md:grid-cols-3 mt-20 bg-black shadow shadow-lg">
+    <div className="grid grid-cols-3 gap-1 md:grid-cols-3 mt-12 lg:mt-18 bg-black bg-fixed">
       <img src="/heroShop1.jpg" alt="Pose 1" className="col-span-2 row-span-2 object-cover" />
       <img src="/heroShop2.jpg" alt="Pose 2" className="col-span-1 row-span-1 object-cover" />
       <img src="/heroShop6.jpg" alt="Pose 3" className="col-span-1 row-span-2 object-cover" />
