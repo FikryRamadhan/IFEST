@@ -3,6 +3,7 @@ import Navbar from "../component/Navbar";
 import About from "../sections/home/About";
 import Content from "../sections/home/Content";
 import Hero from "../sections/home/Hero";
+import Section from "../sections/home/Section";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         </div>
         <div className="w-full">
           <About />
+          <Section />
           <Content />
           <Footer />
         </div>
