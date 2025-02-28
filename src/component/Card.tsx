@@ -1,11 +1,18 @@
 import { useState } from "react";
+import { IconShoppingCart } from "@tabler/icons-react";
 
-const Card = ({ name, description, images, hoverImages, price, colors }) => {
+const Card = ({ id, name, description, images, price, colors, onAddToCart }) => {
   const [currentImage, setCurrentImage] = useState(images[0]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(null);
 
+  const handleAddToCart = () => {
+    if (onAddToCart) {
+      onAddToCart(id, selectedIndex);
+    }
+  };
+  
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -48,7 +55,7 @@ const Card = ({ name, description, images, hoverImages, price, colors }) => {
         <p className="text-sm text-gray-500 mt-1">{description}</p>
         <p className="min-md:text-md font-bold text-black-600 mt-1">Rp {price.toLocaleString()}</p>
         
-        {/* Warna Selector */}
+        {/* Warna Selector dan add to cart*/}
         <div className="flex gap-2 mt-4">
           {images.map((image, index) => (
             <div
@@ -59,7 +66,14 @@ const Card = ({ name, description, images, hoverImages, price, colors }) => {
               onMouseLeave={handleHoverLeave}
             ></div>
           ))}
+            <button
+            className="flex items-center pl-13"
+            onClick={handleAddToCart}
+          >
+            <IconShoppingCart size={20} />
+          </button>
         </div>
+
       </div>
     </div>
   );

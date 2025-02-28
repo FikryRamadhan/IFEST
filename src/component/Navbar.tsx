@@ -7,14 +7,16 @@ import {
 } from "@tabler/icons-react";
 import { useEffect, useRef, useState } from "react";
 import AuthForm from "./AuthForm";
+import Cart from "./Cart";
 
-const Navbar = () => {
+const Navbar = ({ carts, onQuantityChange, onSelectChange }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const loginButtonRef = useRef<HTMLButtonElement>(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   let lastScrollY = useRef(0);
   let scrollTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -22,6 +24,7 @@ const Navbar = () => {
   // Handle menu toggle
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleCart = () => setIsCartOpen(!isCartOpen);
 
   // Scroll behavior
   const handleScroll = () => {
@@ -106,12 +109,34 @@ const Navbar = () => {
               className="cursor-pointer hover:text-black transition-colors"
             />
           </button>
-          <IconShoppingBag
-            size={32}
-            className="cursor-pointer hover:text-black transition-colors"
-          />
+          <button onClick={toggleCart} className="relative inline-block">
+            <IconShoppingBag
+              size={32}
+              className="cursor-pointer hover:text-black transition-colors"
+            />
+            {/* Badge Angka */}
+            <span
+              className="
+                absolute
+                -top-1
+                -right-1
+                bg-red-500
+                text-white
+                text-xs
+                rounded-full
+                w-4
+                h-4
+                flex
+                items-center
+                justify-center
+              "
+            >
+              {carts.length}
+            </span>
+          </button>
         </div>
       </div>
+
       {/* Mobile Menu */}
       <div
         className={`fixed top-0 left-0 w-[250px] h-full bg-white shadow-md transform ${
@@ -179,6 +204,69 @@ const Navbar = () => {
           ></div>
         )}
       </div>
+
+      {/* Sidebar Cart */}
+      <div className="m-0 font-sans">
+        <div
+          className={`fixed h-full w-[300px] top-0 bg-white shadow-xl transition-all duration-500 z-50 p-6 overflow-y-auto ${
+            isCartOpen ? "right-0" : "right-[-300px]"
+          }`}
+        >
+          <div className="flex items-center justify-between">
+            <h4 className="text-xl">Cart</h4>
+            <button onClick={toggleCart}>
+              <IconX size={32} />
+            </button>
+          </div>
+          <div className="mt-6">
+            {/* Daftar Item Keranjang */}
+            {carts.map((cartItem) => (
+              <Cart
+                key={cartItem.id}
+                {...cartItem}
+                onQuantityChange={onQuantityChange}
+                onSelectChange={onSelectChange}
+              />
+            ))}
+          </div>
+          {/* Bagian Total dan Checkout */}
+          <div className="border-t pt-4 mt-4">
+            {(() => {
+              const totalItems = carts.reduce(
+                (acc, item) => acc + (item.selected ? item.quantity : 0),
+                0
+              );
+              const totalPrice = carts.reduce(
+                (acc, item) =>
+                  acc + (item.selected ? item.price * item.quantity : 0),
+                0
+              );
+              return (
+                <>
+                  <div className="flex justify-between text-lg font-semibold">
+                    <span>Total Items:</span>
+                    <span>{totalItems}</span>
+                  </div>
+                  <div className="flex justify-between text-lg font-semibold">
+                    <span>Total Price:</span>
+                    <span>Rp {totalPrice.toLocaleString()}</span>
+                  </div>
+                </>
+              );
+            })()}
+            <button className="w-full bg-blue-500 text-white py-2 rounded mt-4">
+              Checkout
+            </button>
+          </div>
+        </div>
+        {isCartOpen && (
+          <div
+            className="fixed inset-0 bg-black/50 z-40"
+            onClick={toggleCart}
+          ></div>
+        )}
+      </div>
+
     </>
   );
 };
