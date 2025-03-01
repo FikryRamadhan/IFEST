@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CartProvider } from "./hooks/cartContext";
 import Home from "./pages/Home";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Navbar from "./component/Navbar";
@@ -11,12 +12,14 @@ function App() {
   return (
     <>
       <Router>
+      <CartProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/shop-fashion" element={<Shop />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </CartProvider>
         <ChatbotButton />
       </Router>
     </>

@@ -6,10 +6,12 @@ import {
   IconX,
 } from "@tabler/icons-react";
 import { useEffect, useRef, useState } from "react";
+import { useCart } from "../hooks/cartContext";
 import AuthForm from "./AuthForm";
 import Cart from "./Cart";
 
-const Navbar = ({ carts, onQuantityChange, onSelectChange }) => {
+const Navbar = () => {
+  const { cart, handleQuantityChange, handleSelectChange } = useCart()
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -131,7 +133,7 @@ const Navbar = ({ carts, onQuantityChange, onSelectChange }) => {
                 justify-center
               "
             >
-              {carts.length}
+              {cart.length}
             </span>
           </button>
         </div>
@@ -220,23 +222,23 @@ const Navbar = ({ carts, onQuantityChange, onSelectChange }) => {
           </div>
           <div className="mt-6">
             {/* Daftar Item Keranjang */}
-            {carts.map((cartItem) => (
+            {cart.map((cartItem) => (
               <Cart
                 key={cartItem.id}
                 {...cartItem}
-                onQuantityChange={onQuantityChange}
-                onSelectChange={onSelectChange}
+                onQuantityChange={handleQuantityChange}
+                onSelectChange={handleSelectChange}
               />
             ))}
           </div>
           {/* Bagian Total dan Checkout */}
           <div className="border-t pt-4 mt-4">
             {(() => {
-              const totalItems = carts.reduce(
+              const totalItems = cart.reduce(
                 (acc, item) => acc + (item.selected ? item.quantity : 0),
                 0
               );
-              const totalPrice = carts.reduce(
+              const totalPrice = cart.reduce(
                 (acc, item) =>
                   acc + (item.selected ? item.price * item.quantity : 0),
                 0
