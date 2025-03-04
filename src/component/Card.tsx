@@ -21,21 +21,6 @@ const Card = ({ id, name, description, images, price, colors, onAddToCart }) => 
     setIsHovered(false);
   };
 
-  const handleSelect = (index) => {
-    setSelectedIndex(index);
-    setCurrentImage(images[index]);
-  };
-
-  const handleHover = (index) => {
-    setHoverIndex(index);
-    setCurrentImage(images[index]);
-  };
-
-  const handleHoverLeave = () => {
-    setHoverIndex(null);
-    setCurrentImage(images[selectedIndex]);
-  };
-
   return (
     <div className="bg-white space-10 rounded-lg shadow-gray-300 shadow-lg overflow-hidden max-w-xs w-full text-left">
       <div
@@ -44,11 +29,6 @@ const Card = ({ id, name, description, images, price, colors, onAddToCart }) => 
         onMouseLeave={handleMouseLeave}
       >
         <img src={currentImage} alt={name} className="w-full h-[300px] object-cover" />
-        {isHovered && (
-          <div className="absolute bottom-0 left-0 w-full bg-gray-200 bg-opacity-50 text-black text-center py-2">
-            Buy Now
-          </div>
-        )}
       </div>
       <div className="p-3">
         <h2 className="min-md:text-md font-semibold text-gray-800">{name}</h2>
@@ -57,20 +37,11 @@ const Card = ({ id, name, description, images, price, colors, onAddToCart }) => 
         
         {/* Warna Selector dan add to cart*/}
         <div className="flex gap-2 mt-4">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className={`w-5 sm:w-7 h-5 sm:h-7 rounded-full cursor-pointer border-2 transition ${selectedIndex === index ? 'border-black' : 'border-transparent'} ${colors[index]}`}
-              onClick={() => handleSelect(index)}
-              onMouseEnter={() => handleHover(index)}
-              onMouseLeave={handleHoverLeave}
-            ></div>
-          ))}
-            <button
-            className="flex items-center pl-13"
+          <button
+            className="flex items-center bg-black text-white p-2 rounded-lg"
             onClick={handleAddToCart}
           >
-            <IconShoppingCart size={20} />
+            Keranjang <span className="ml-3"><IconShoppingCart size={20} /></span>
           </button>
         </div>
 

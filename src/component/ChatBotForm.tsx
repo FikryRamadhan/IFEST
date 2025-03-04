@@ -101,8 +101,8 @@ const ChatbotAction = () => {
 
     return (
         <>
-            <div className="fixed top-27 max-sm:left-8 lg:bottom-10 right-5 w-90 lg:w-100 h-[calc(80%-40px)] bg-white rounded-lg shadow-xl border border-gray-300 flex flex-col">
-                <div className="flex justify-between items-center p-3 border-b border-gray-300 bg-gray-100">
+            <div className="fixed top-27 bottom-5 max-sm:left-8 lg:bottom-16 right-5 w-90 lg:w-100 h-[calc(80%-40px)] bg-white rounded-lg shadow-xl border border-gray-300 flex flex-col">
+                <div className="flex justify-between items-center  p-3 border-b border-gray-300 bg-gray-100">
                     <h2 className="text-md font-semibold">Second Bot</h2>
                     <button onClick={() => setMenuOpen(!menuOpen)} className="text-gray-500 hover:text-gray-700">
                         <IconMenu size={20} />

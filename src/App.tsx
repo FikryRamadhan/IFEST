@@ -6,6 +6,8 @@ import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import ChatbotButton from "./component/ModalChat";
 import Shop from "./pages/Shop";
+import Detail from "./pages/Detail";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/shop-fashion" element={<Shop />} />
+          <Route path="/shop-fashion/:id" element={<Detail />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ChatbotButton />

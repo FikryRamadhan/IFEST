@@ -230,7 +230,7 @@ const Navbar = ({ carts, onQuantityChange, onSelectChange }) => {
             ))}
           </div>
           {/* Bagian Total dan Checkout */}
-          <div className="border-t pt-4 mt-4">
+          <div className="border-t pt-4 mt-4 ">
             {(() => {
               const totalItems = carts.reduce(
                 (acc, item) => acc + (item.selected ? item.quantity : 0),
@@ -254,7 +254,7 @@ const Navbar = ({ carts, onQuantityChange, onSelectChange }) => {
                 </>
               );
             })()}
-            <button className="w-full bg-blue-500 text-white py-2 rounded mt-4">
+            <button className="w-full bg-black text-white py-2 rounded mt-4 cursor-pointer">
               Checkout
             </button>
           </div>

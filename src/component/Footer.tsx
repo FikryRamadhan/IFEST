@@ -7,15 +7,14 @@ const Footer = () => {
         <div className="container">
           <div className="flex flex-wrap">
             <div className="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
-              <h2 className="font-bold text-4xl text-white mb-5">EcoThreads</h2>
+              <h2 className="font-bold text-4xl text-white mb-5">Second Soul</h2>
               <h3 className="font-bold text-2xl mb-2">Hubungi Kami</h3>
-              <p>user@gmail.com</p>
-              <p>Jl. Cilimus</p>
+              <p>alope@gmail.com</p>
               <p>Kuningan</p>
             </div>
             <div className="w-full px-4 mb-12 md:w-1/3">
               <h3 className="font-semibold text-white mb-5 text-xl">
-                Kategorin Tulisan
+                Team Kami
               </h3>
               <ul className="text-slate-300">
                 <li>
@@ -23,7 +22,7 @@ const Footer = () => {
                     href="#"
                     className="inline-block text-base hover:text-slate-100 mb-3"
                   >
-                    Programing
+                    Fikry Ramadhan
                   </a>
                 </li>
                 <li>
@@ -31,7 +30,7 @@ const Footer = () => {
                     href="#"
                     className="inline-block text-base hover:text-slate-100 mb-3"
                   >
-                    Programing
+                    Billy Jhonathan
                   </a>
                 </li>
                 <li>
@@ -39,14 +38,14 @@ const Footer = () => {
                     href="#"
                     className="inline-block text-base hover:text-slate-100 mb-3"
                   >
-                    Programing
+                    Muhammad Rizky
                   </a>
                 </li>
               </ul>
             </div>
             <div className="w-full px-4 mb-12 md:w-1/3">
               <h3 className="font-semibold text-white mb-5 text-xl">
-                Kategorin Tulisan
+              Fitur Kami
               </h3>
               <ul className="text-slate-300">
                 <li>
@@ -54,7 +53,7 @@ const Footer = () => {
                     href="#home"
                     className="inline-block text-base hover:text-slate-100 mb-3"
                   >
-                    Beranda
+                    Home
                   </a>
                 </li>
                 <li>
@@ -62,7 +61,7 @@ const Footer = () => {
                     href="#about"
                     className="inline-block text-base hover:text-slate-100 mb-3"
                   >
-                    Tentang Saya
+                    Shop
                   </a>
                 </li>
                 <li>
@@ -70,7 +69,7 @@ const Footer = () => {
                     href="#portfolio"
                     className="inline-block text-base hover:text-slate-100 mb-3"
                   >
-                    Portfolio
+                    Swap
                   </a>
                 </li>
                 <li>
@@ -78,23 +77,7 @@ const Footer = () => {
                     href="#clients"
                     className="inline-block text-base hover:text-slate-100 mb-3"
                   >
-                    Clients
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#blog"
-                    className="inline-block text-base hover:text-slate-100 mb-3"
-                  >
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#contact"
-                    className="inline-block text-base hover:text-slate-100 mb-3"
-                  >
-                    Contact
+                    About
                   </a>
                 </li>
               </ul>

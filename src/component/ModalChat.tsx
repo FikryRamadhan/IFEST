@@ -10,7 +10,7 @@ export default function ChatbotButton() {
             {/* Floating Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="fixed bottom-5 right-5 bg-black hover:bg-gray-800 text-white p-3 rounded-full shadow-lg"
+                className="fixed bottom-3 right-5 bg-black hover:bg-gray-800 text-white p-3 rounded-full shadow-lg"
             >
                 {isOpen ? <IconChevronCompactDown size={30} /> : <IconMessage2Filled size={30} />}
             </button>

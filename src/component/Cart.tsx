@@ -48,10 +48,7 @@ const Cart = ({
         <h2 className="text-lg font-semibold">{name}</h2>
         <p className="text-sm">Rp {(price * quantity).toLocaleString()}</p>
         <div className="flex gap-2 rounded overflow-hidden">
-          <div
-            className={`w-5 sm:w-7 h-5 sm:h-7 rounded-full cursor-pointer border-2 transition ${colors[selectedIndex]}`}
-          ></div>
-          <div className="flex bg-gray-200 gap-2 px-2 rounded items-center">
+          <div className="flex bg-gray-200 gap-2 px-2 rounded items-center mt-3">
             <button
               className="bg-gray-200 hover:bg-gray-300 px-1 py-0 rounded"
               onClick={handleDecrease}
