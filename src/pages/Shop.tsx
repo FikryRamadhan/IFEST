@@ -1,5 +1,6 @@
-import React, { useState } from "react"
 import { useCart } from "../hooks/cartContext"
+import { toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import Card from "../component/Card"
 import ShopCategory from "../component/ShopCategory"
 import Products from "../../public/Products"
@@ -14,6 +15,7 @@ const Shop = () => {
     const selectedProduct = Products.find((product) => product.id === id);
     if (selectedProduct) {
       addToCart({ ...selectedProduct, selectedIndex, quantity: 1, selected: true });
+      toast.success("Product added to cart");
     }
   };
   

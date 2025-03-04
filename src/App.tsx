@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { CartProvider } from "./hooks/cartContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Home from "./pages/Home";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Navbar from "./component/Navbar";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import ChatbotButton from "./component/ModalChat";
@@ -21,6 +22,7 @@ function App() {
         </Routes>
         </CartProvider>
         <ChatbotButton />
+        <ToastContainer />
       </Router>
     </>
   );

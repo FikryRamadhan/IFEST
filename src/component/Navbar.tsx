@@ -207,67 +207,74 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Sidebar Cart */}
-      <div className="m-0 font-sans">
-        <div
-          className={`fixed h-full w-[300px] top-0 bg-white shadow-xl transition-all duration-500 z-50 p-6 overflow-y-auto ${
-            isCartOpen ? "right-0" : "right-[-300px]"
-          }`}
-        >
-          <div className="flex items-center justify-between">
-            <h4 className="text-xl">Cart</h4>
-            <button onClick={toggleCart}>
-              <IconX size={32} />
-            </button>
-          </div>
-          <div className="mt-6">
-            {/* Daftar Item Keranjang */}
-            {cart.map((cartItem) => (
-              <Cart
-                key={cartItem.id}
-                {...cartItem}
-                onQuantityChange={handleQuantityChange}
-                onSelectChange={handleSelectChange}
-              />
-            ))}
-          </div>
-          {/* Bagian Total dan Checkout */}
-          <div className="border-t pt-4 mt-4">
-            {(() => {
-              const totalItems = cart.reduce(
-                (acc, item) => acc + (item.selected ? item.quantity : 0),
-                0
-              );
-              const totalPrice = cart.reduce(
-                (acc, item) =>
-                  acc + (item.selected ? item.price * item.quantity : 0),
-                0
-              );
-              return (
-                <>
-                  <div className="flex justify-between text-lg font-semibold">
-                    <span>Total Items:</span>
-                    <span>{totalItems}</span>
-                  </div>
-                  <div className="flex justify-between text-lg font-semibold">
-                    <span>Total Price:</span>
-                    <span>Rp {totalPrice.toLocaleString()}</span>
-                  </div>
-                </>
-              );
-            })()}
-            <button className="w-full bg-blue-500 text-white py-2 rounded mt-4">
-              Checkout
-            </button>
-          </div>
-        </div>
-        {isCartOpen && (
-          <div
-            className="fixed inset-0 bg-black/50 z-40"
-            onClick={toggleCart}
-          ></div>
-        )}
+{/* Sidebar Cart */}
+<div className="m-0 font-sans">
+  <div
+    className={`fixed h-full w-[300px] top-0 bg-white shadow-xl transition-all duration-500 z-50 p-6 flex flex-col ${
+      isCartOpen ? "right-0" : "right-[-300px]"
+    }`}
+  >
+    {/* Header - tetap di atas */}
+    <div className="flex-none">
+      <div className="flex items-center justify-between">
+        <h4 className="text-xl">Cart</h4>
+        <button onClick={toggleCart}>
+          <IconX size={32} />
+        </button>
       </div>
+    </div>
+
+    {/* Area Item - hanya bagian ini yang discroll */}
+    <div className="flex-1 mt-6 overflow-y-auto">
+      {cart.map((cartItem) => (
+        <Cart
+          key={cartItem.id}
+          {...cartItem}
+          onQuantityChange={handleQuantityChange}
+          onSelectChange={handleSelectChange}
+        />
+      ))}
+    </div>
+
+    {/* Footer Checkout - selalu di bawah */}
+    <div className="flex-none border-t pt-4">
+      {(() => {
+        const totalItems = cart.reduce(
+          (acc, item) => acc + (item.selected ? item.quantity : 0),
+          0
+        );
+        const totalPrice = cart.reduce(
+          (acc, item) =>
+            acc + (item.selected ? item.price * item.quantity : 0),
+          0
+        );
+        return (
+          <>
+            <div className="flex justify-between text-lg font-semibold">
+              <span>Total Items:</span>
+              <span>{totalItems}</span>
+            </div>
+            <div className="flex justify-between text-lg font-semibold">
+              <span>Total Price:</span>
+              <span>Rp {totalPrice.toLocaleString()}</span>
+            </div>
+          </>
+        );
+      })()}
+      <button className="w-full bg-blue-500 text-white py-2 rounded mt-4">
+        Checkout
+      </button>
+    </div>
+  </div>
+  {isCartOpen && (
+    <div
+      className="fixed inset-0 bg-black/50 z-40"
+      onClick={toggleCart}
+    ></div>
+  )}
+</div>
+
+
 
     </>
   );
