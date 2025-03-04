@@ -35,13 +35,13 @@ const Card = ({ id, name, description, images, price, colors, onAddToCart }) => 
         <p className="text-sm text-gray-500 mt-1">{description}</p>
         <p className="min-md:text-md font-bold text-black-600 mt-1">Rp {price.toLocaleString()}</p>
         
-        {/* Warna Selector dan add to cart*/}
-        <div className="flex gap-2 mt-4">
-          <button
-            className="flex items-center bg-black text-white p-2 rounded-lg"
+        {/* add to cart*/}
+        <div className="mt-4 flex justify-end">
+            <button
+            className="flex items-center border rounded border-gray-300 p-2"
             onClick={handleAddToCart}
           >
-            Keranjang <span className="ml-3"><IconShoppingCart size={20} /></span>
+            Add To <IconShoppingCart size={20} />
           </button>
         </div>
 
