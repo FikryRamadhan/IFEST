@@ -10,7 +10,7 @@ const Home = () => {
     <>
       <div>
         <Navbar />
-        <div className="lg:mt-20 mt-10">
+        <div className="lg:mt-18 mt-10">
           <Hero />
         </div>
         <div className="w-full">

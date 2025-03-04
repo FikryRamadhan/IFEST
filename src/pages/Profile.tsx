@@ -100,8 +100,8 @@ const OrderHistory = () => {
 
     return (
         <>
-        {/* <Navbar /> */}
-            <div className="flex flex-col md:flex-row p-10 bg-gray-100 h-[70%]">
+            <Navbar />
+            <div className="flex flex-col md:flex-row p-10 bg-gray-100 h-[70%] pt-25">
                 <aside className="w-full md:w-1/4 p-4 bg-white shadow-md rounded-xl mb-6 md:mb-0">
                     <div className="flex flex-col items-center">
                         <div className="w-20 h-20 bg-gray-200 rounded-full mb-4 flex items-center justify-center">
@@ -131,6 +131,7 @@ const OrderHistory = () => {
                     {renderContent()}
                 </main>
             </div>
+            <Footer />
         </>
     );
 };

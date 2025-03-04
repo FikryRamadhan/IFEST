@@ -93,12 +93,6 @@ const Navbar = () => {
             to={""}
             className="relative lg:ml-1  pb-2 text-zinc-950 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-zinc-950 after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
           >
-            Swap
-          </NavLink>
-          <NavLink
-            to={""}
-            className="relative lg:ml-1  pb-2 text-zinc-950 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-zinc-950 after:absolute after:rounded-full hover:after:w-full after:transition-all after:duration-500 after:left-0"
-          >
             About
           </NavLink>
         </div>
@@ -167,12 +161,6 @@ const Navbar = () => {
               className="relative lg:ml-1  pb-2 text-zinc-950 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-zinc-950 after:absolute after:rounded-full hover:after:w-1/2 after:transition-all after:duration-500 after:left-0"
             >
               Shop
-            </NavLink>
-            <NavLink
-              to={""}
-              className="relative lg:ml-1  pb-2 text-zinc-950 text-lg after:content-[''] after:bottom-0 after:h-[2px] after:bg-zinc-950 after:absolute after:rounded-full hover:after:w-1/2 after:transition-all after:duration-500 after:left-0"
-            >
-              Swap
             </NavLink>
             <NavLink
               to={""}
@@ -261,7 +249,7 @@ const Navbar = () => {
           </>
         );
       })()}
-      <button className="w-full bg-blue-500 text-white py-2 rounded mt-4">
+      <button className="w-full bg-black text-white py-2 rounded mt-4">
         Checkout
       </button>
     </div>

@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <div className="pt-24 pb-12 bg-black lg:px-24 px-1">
+      <div className="pt-24 bg-black lg:px-24 px-1">
         <div className="container">
           <div className="flex flex-wrap">
             <div className="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
@@ -154,14 +154,10 @@ const Footer = () => {
             </div>
           </div>
 
-          <p className="font-medium text-xs text-slate-500 text-center">
+          <p className="font-medium text-xs pb-10 text-slate-500 text-center">
             Dibuat Dengan <span className="text-pink-500">❤️</span>
             <a href="#" target="_blank" className="font-bold text-primary">
               Oleh Tim Alope{" "}
-            </a>
-            , Menggunakan
-            <a href="#" target="_blank" className="font-bold text-primary">
-              HTML & Css.
             </a>
           </p>
         </div>
